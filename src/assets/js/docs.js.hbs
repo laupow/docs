@@ -330,6 +330,16 @@ Created by Zach Supalla.
     return href;
   }
 
+  Docs.trackDownloadLinks = function() {
+    $(document).ready(function() {
+        $('a.download-link').each(function(i, ele) {
+            analytics.trackLink(i, 'Clicked on a Link', {
+                href: ele.href
+            });
+        });
+    });
+  }
+
   var deviceLinks = {{{ json forkList }}};
   var redirects = {{{ json redirectList }}};
 
@@ -344,6 +354,7 @@ Created by Zach Supalla.
   Docs.toggleNav();
   Docs.toggleShowing();
   Docs.catchRedirectLinks();
+  Docs.trackDownloadLinks();
   //Docs.enableZendeskWidget();
   if (prettyPrint) {
     prettyPrint();
