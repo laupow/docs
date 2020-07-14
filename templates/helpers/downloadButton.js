@@ -17,9 +17,9 @@ module.exports = function(context) {
 	}
 	
 	html += '</p><div class="buttonUpperRight">';
-	
-	html += '<a href="' + url + '" class="button buttonRounded';
-	
+
+	html += '<a href="' + url + '" class="button buttonRounded download-link';
+
 	if (context.hash.cssClass) {
 		html += ' ' + context.hash.cssClass;
 	}
